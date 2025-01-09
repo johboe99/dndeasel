@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_09_125835) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_09_133209) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "classname"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "level"
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.index ["game_id"], name: "index_characters_on_game_id"
+    t.index ["user_id"], name: "index_characters_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.integer "counter"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +54,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_09_125835) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "characters", "games"
+  add_foreign_key "characters", "users"
+  add_foreign_key "games", "users"
 end
