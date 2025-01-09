@@ -1,0 +1,15 @@
+<% @user.games.each do |game| %>
+  <%= game.title %>
+<% end %>
+
+<% @user.characters.each do |char| %>
+  <%= char.name %>
+  <%= char.classname %>
+  <%= char.level %>
+  <%= char.strength %>
+  <%= char.dexterity %>
+  <%= char.constitution %>
+  <%= char.intelligence %>
+  <%= char.wisdom %>
+  <%= char.charisma %>
+<% end %>

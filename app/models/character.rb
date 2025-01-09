@@ -1,6 +1,6 @@
 class Character < ApplicationRecord
   belongs_to :user
-  has_many :games
+  belongs_to :game
 
   validates :name, presence: true, length: { maximum: 16 }
   validates :classname, presence: true, inclusion: { in: %w(Barbar Barde Druide
