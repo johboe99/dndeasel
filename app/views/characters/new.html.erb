@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>Create a new Character for <%= @game.title %></h3>
+  <p>You will be able to edit it later</p>
+  <div>
+    <%= simple_form_for([@game, @character]) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :classname, :collection => %w(Barbar Barde Druide
+                                                Hexenmeister Kämpfer
+                                                Kleriker Magier Mönch
+                                                Paladin Schurke
+                                                Waldläufer Zauberer) %>
+      <%= f.input :level %>
+      <%= f.input :strength %>
+      <%= f.input :dexterity %>
+      <%= f.input :constitution %>
+      <%= f.input :intelligence %>
+      <%= f.input :wisdom %>
+      <%= f.input :charisma %>
+      <%= f.submit "Create!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
