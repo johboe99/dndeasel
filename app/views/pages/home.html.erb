@@ -1,4 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
 
-<%= link_to 'Your Games', games_path %>
+  <% if user_signed_in? %>
+    <h1>Welcome to DnDeasel, <%= @user.username %>!</h1>
+  <% else %>
+    <h1>Welcome to DnDeasel!</h1>
+    <p>Please sign in to access all features.</p>
+  <% end %>
+
+  <div class="mt-5">
+    <li>Game creation</li>
+    <li>Character Overview</li>
+    <li>API search</li>
+    <li>Account settings</li>
+  </div>
+
+  <div class="mt-5">
+    <%= link_to 'Your Games', games_path %>
+    <%= link_to 'Create Game', new_game_path %>
+  </div>
+</div>

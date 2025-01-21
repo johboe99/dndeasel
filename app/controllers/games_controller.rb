@@ -10,6 +10,8 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    @user = current_user
+    @game.user = @user
 
     if @game.save
       redirect_to new_game_path(@game), notice: 'Game was successfully created.'
@@ -24,7 +26,7 @@ class GamesController < ApplicationController
 
   private
 
-  def spot_params
-    params.require(:spot).permit(:title, :description)
+  def game_params
+    params.require(:game).permit(:title, :description)
   end
 end
