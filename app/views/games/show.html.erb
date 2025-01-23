@@ -7,12 +7,15 @@
     </div>
   </div>
 
-  <div class="mt-5">
+  <div class="mt-5 mb-5" data-controller="toggle-form">
     <h2>Characters in this Game</h2>
     <% @game.characters.each do |char| %>
       <li><%= char.name %>, Level <%= char.level %> <%= char.classname %></li>
     <% end %>
     <br>
-    <%= link_to "Add a Character", new_game_character_path(@game) %>
+    <button class="btn btn-primary" data-action="click->toggle-form#toggle" data-toggle-form-target="button">Add a new Character</button>
+    <div class="d-none mt-3" data-toggle-form-target="form">
+      <%= render "characterform", character: Character.new(game: @game) %>
+    </div>
   </div>
 </div>
