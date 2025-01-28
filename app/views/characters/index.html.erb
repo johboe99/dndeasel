@@ -1,3 +1,13 @@
-<div class="container">
-
+<div class="container mt-5">
+  <h2 class="mt-3"> Your Characters</h2>
+  <% @user.characters.each do |char| %>
+    <div class="card-char mb-3">
+      <%= cl_image_tag("https://res.cloudinary.com/dmilkgxzg/image/upload/v1738069681/dnd_default_char_inyo1c.png") %>
+      <div class="card-char-infos">
+        <h2><%= link_to char.name, char %></h2>
+        <p>Level <%= char.level %> <%= char.classname %></p>
+        <p>Game: <%= char.game.title %></p>
+      </div>
+    </div>
+  <% end %>
 </div>

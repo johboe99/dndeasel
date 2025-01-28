@@ -1,0 +1,218 @@
+<div class="container mt-3">
+  <h3><%= @character.name.upcase %></h3>
+  <h3>Level <%= @character.level %> <%= @character.classname %></h3>
+</div>
+
+<form class="charsheet">
+  <header>
+    <section class="charname">
+      <label for="charname">Character Name</label>
+      <input name="charname" placeholder="Thoradin Fireforge">
+    </section>
+    <section class="misc">
+      <ul>
+        <li>
+          <label for="classlevel">Class & Level</label>
+          <input name="classlevel" placeholder="Paladin 2">
+        </li>
+        <li>
+          <label for="background">Background</label>
+          <input name="background" placeholder="Acolyte">
+        </li>
+        <li>
+          <label for="playername">Player Name</label>
+          <input name="playername" placeholder="Player McPlayerface">
+        </li>
+        <li>
+          <label for="race">Race</label>
+          <input name="race" placeholder="Half-elf">
+        </li>
+        <li>
+          <label for="alignment">Alignment</label>
+          <input name="alignment" placeholder="Lawful Good">
+        </li>
+        <li>
+          <label for="experiencepoints">Experience Points</label>
+          <input name="experiencepoints" placeholder="3240">
+        </li>
+      </ul>
+    </section>
+  </header>
+
+  <main>
+    <section>
+      <section class="attributes">
+        <div class="scores">
+          <ul>
+            <li>
+              <div class="score">
+                <label for="Strengthscore">Strength</label>
+                <input name="Strengthscore" placeholder="10">
+              </div>
+              <div class="modifier">
+                <input name="Strengthmod" placeholder="+0">
+              </div>
+            </li>
+            <!-- Repeated for other attributes (Dexterity, Constitution, etc.) -->
+            <li>
+              <div class="score">
+                <label for="Dexterityscore">Dexterity</label>
+                <input name="Dexterityscore" placeholder="10">
+              </div>
+              <div class="modifier">
+                <input name="Dexteritymod" placeholder="+0">
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Constitutionscore">Constitution</label>
+                <input name="Constitutionscore" placeholder="10">
+              </div>
+              <div class="modifier">
+                <input name="Constitutionmod" placeholder="+0">
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Wisdomscore">Wisdom</label>
+                <input name="Wisdomscore" placeholder="10">
+              </div>
+              <div class="modifier">
+                <input name="Wisdommod" placeholder="+0">
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Intelligencescore">Intelligence</label>
+                <input name="Intelligencescore" placeholder="10">
+              </div>
+              <div class="modifier">
+                <input name="Intelligencemod" placeholder="+0">
+              </div>
+            </li>
+            <li>
+              <div class="score">
+                <label for="Charismascore">Charisma</label>
+                <input name="Charismascore" placeholder="10">
+              </div>
+              <div class="modifier">
+                <input name="Charismamod" placeholder="+0">
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="attr-applications">
+          <div class="inspiration box">
+            <div class="label-container">
+              <label for="inspiration">Inspiration</label>
+            </div>
+            <input name="inspiration" type="checkbox">
+          </div>
+          <div class="proficiencybonus box">
+            <div class="label-container">
+              <label for="proficiencybonus">Proficiency Bonus</label>
+            </div>
+            <input name="proficiencybonus" placeholder="+2">
+          </div>
+
+          <div class="saves list-section box">
+            <ul>
+              <li>
+                <label for="Strength-save">Strength</label>
+                <input name="Strength-save" type="text" placeholder="+0">
+                <input name="Strength-save-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Dexterity-save">Dexterity</label>
+                <input name="Dexterity-save" type="text" placeholder="+0">
+                <input name="Dexterity-save-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Constitution-save">Constitution</label>
+                <input name="Constitution-save" type="text" placeholder="+0">
+                <input name="Constitution-save-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Wisdom-save">Wisdom</label>
+                <input name="Wisdom-save" type="text" placeholder="+0">
+                <input name="Wisdom-save-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Intelligence-save">Intelligence</label>
+                <input name="Intelligence-save" type="text" placeholder="+0">
+                <input name="Intelligence-save-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Charisma-save">Charisma</label>
+                <input name="Charisma-save" type="text" placeholder="+0">
+                <input name="Charisma-save-prof" type="checkbox">
+              </li>
+            </ul>
+            <div class="label">Saving Throws</div>
+          </div>
+
+          <div class="skills list-section box">
+            <ul>
+              <li>
+                <label for="Acrobatics">Acrobatics <span class="skill">(Dex)</span></label>
+                <input name="Acrobatics" type="text" placeholder="+0">
+                <input name="Acrobatics-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Animal Handling">Animal Handling <span class="skill">(Wis)</span></label>
+                <input name="Animal Handling" type="text" placeholder="+0">
+                <input name="Animal Handling-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Arcana">Arcana <span class="skill">(Int)</span></label>
+                <input name="Arcana" type="text" placeholder="+0">
+                <input name="Arcana-prof" type="checkbox">
+              </li>
+              <li>
+                <label for="Athletics">Athletics <span class="skill">(Str)</span></label>
+                <input name="Athletics" type="text" placeholder="+0">
+                <input name="Athletics-prof" type="checkbox">
+              </li>
+              <!-- Continue listing all other skills similarly -->
+            </ul>
+            <div class="label">Skills</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section>
+      <div class="combat">
+        <div class="armorclass">
+          <label for="ac">Armor Class</label>
+          <input type="text" name="ac" placeholder="10">
+        </div>
+        <div class="initiative">
+          <label for="initiative">Initiative</label>
+          <input type="text" name="initiative" placeholder="+0">
+        </div>
+        <div class="speed">
+          <label for="speed">Speed</label>
+          <input type="text" name="speed" placeholder="30">
+        </div>
+        <div class="hp">
+          <div class="regular">
+            <div class="max">
+              <label for="maxhp">Hit Point Maximum</label>
+              <input type="text" name="maxhp" placeholder="10">
+            </div>
+            <div class="current">
+              <label for="currenthp">Current Hit Points</label>
+              <input type="text" name="currenthp">
+            </div>
+          </div>
+          <div class="temporary">
+            <label for="temphp">Temporary Hit Points</label>
+            <input type="text" name="temphp">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</form>
