@@ -1,9 +1,11 @@
-<%= link_to 'Back to Home', root_path %>
-
-<div class="container">
+<div class="container mt-5">
   <% @user.games.each do |game| %>
-    <div class="card">
-      <%= link_to game.title, game %>
+    <div class="card-char">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-char-infos">
+        <h2><%= link_to game.title, game %></h2>
+        <p><%= game.description %></p>
+      </div>
     </div>
   <% end %>
 </div>

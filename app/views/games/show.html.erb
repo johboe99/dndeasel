@@ -1,17 +1,18 @@
 <div class="container">
-  <%= link_to 'Back to Home', root_path %>
-  <div class="mt-5">
-    <h1><%= @game.title %></h1>
-    <div class="mt-2">
-      <p>Description: <%= @game.description %></p>
-    </div>
+  <div class="card-header mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dmilkgxzg/image/upload/v1738069680/dnd_default_background_lo3il6.avif)">
+    <%= @game.title %>
   </div>
 
   <div class="mt-5 mb-5" data-controller="toggle-form">
     <h2>Characters in this Game</h2>
     <% @game.characters.each do |char| %>
-      <li><%= char.name %>, Level <%= char.level %> <%= char.classname %></li>
-    <% end %>
+      <div class="card-char mb-3">
+        <%= cl_image_tag("https://res.cloudinary.com/dmilkgxzg/image/upload/v1738069681/dnd_default_char_inyo1c.png") %>
+        <div class="card-char-infos">
+          <h2><%= char.name %></h2>
+          <p>Level <%= char.level %> <%= char.classname %></p>
+        </div>
+      </div>    <% end %>
     <br>
     <button class="btn btn-primary" data-action="click->toggle-form#toggle" data-toggle-form-target="button">Add a new Character</button>
     <div class="d-none mt-3" data-toggle-form-target="form">
