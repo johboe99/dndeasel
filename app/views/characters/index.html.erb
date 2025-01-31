@@ -9,7 +9,9 @@
           <p>Level <%= char.level %> <%= char.classname %></p>
           <p>Game: <%= char.game.title %></p>
         </div>
-        <a href="<%= char %>" class="char-button"><i class="fa-solid fa-eye"></i></a>
+        <%= link_to char, class: "char-button" do %>
+          <i class="fa-solid fa-eye"></i>
+        <% end %>
         <a href="<%= edit_character_path(char) %>" class="char-button"><i class="fa-solid fa-pen-to-square"></i></a>
         <%= link_to character_path(char), class: "char-button", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
           <i class="fa-solid fa-trash"></i>
