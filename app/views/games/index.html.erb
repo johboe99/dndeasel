@@ -1,10 +1,12 @@
 <div class="container mt-5">
   <% @user.games.each do |game| %>
     <div class="card-char">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-char-infos">
-        <h2><%= link_to game.title, game %></h2>
-        <p><%= game.description %></p>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="char-img" />
+      <div class="card-char-content">
+        <div class="card-char-infos">
+          <h2><%= link_to game.title, game %></h2>
+          <p><%= game.description %></p>
+        </div>
       </div>
     </div>
   <% end %>

@@ -10,6 +10,17 @@
                                                 Paladin Schurke
                                                 Waldläufer Zauberer) %>
       <%= f.input :level %>
+      <%= f.input :race, :collection => %w(Elf Halbling Mensch Zwerg
+                                                Drachenblütig Gnom Halbelf
+                                                Halbork Tiefling) %>
+      <%= f.input :alignment, :collection => %w(Lawful-Good Lawful-Neutral Lawful-Evil
+                                                Chaotic-Good Chaotic-Neutral Chaotic-Evil
+                                                Neutral-Good Neutral Neutral-Evil) %>
+      <%= f.input :background, :collection => %w(Adeliger Einsiedler Zunfthandwerker
+                                                 Krimineller Scharlatan Seemann
+                                                 Soldat Sonderling Strassenkind
+                                                 Tempeldiener Unterhaltungskünstler
+                                                 Volksheld Weiser) %>
       <%= f.input :strength %>
       <%= f.input :dexterity %>
       <%= f.input :constitution %>

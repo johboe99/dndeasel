@@ -9,4 +9,15 @@ class Character < ApplicationRecord
                                                             Paladin Schurke
                                                             Waldläufer Zauberer) }
   validates :level, presence: true, inclusion: 1..20
+  validates :race, presence: true, inclusion: { in: %w(Elf Halbling Mensch Zwerg
+                                                       Drachenblütig Gnom Halbelf
+                                                       Halbork Tiefling) }
+  validates :alignment, presence: true, inclusion: { in: %w(Lawful-Good Lawful-Neutral Lawful-Evil
+                                                            Chaotic-Good Chaotic-Neutral Chaotic-Evil
+                                                            Neutral-Good Neutral Neutral-Evil) }
+  validates :background, presence: true, inclusion: { in: %w(Adeliger Einsiedler Zunfthandwerker
+                                                             Krimineller Scharlatan Seemann
+                                                             Soldat Sonderling Strassenkind
+                                                             Tempeldiener Unterhaltungskünstler
+                                                             Volksheld Weiser) }
 end
