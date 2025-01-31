@@ -20,4 +20,8 @@ class Character < ApplicationRecord
                                                              Soldat Sonderling Strassenkind
                                                              Tempeldiener Unterhaltungskünstler
                                                              Volksheld Weiser) }
+
+  def stat_mod(stat)
+    (stat - 10) / 2
+  end
 end

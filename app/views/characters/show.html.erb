@@ -38,15 +38,15 @@
           <ul>
             <li>
               <div class="score">
-                <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" />
+                <label for="Strengthscore">Strength</label><input name="Strengthscore" value=<%= @character.strength %> />
               </div>
               <div class="modifier">
-                <input name="Strengthmod" placeholder="+0" />
+                <input name="Strengthmod" value=+<%= @character.stat_mod(@character.strength) %> />
               </div>
             </li>
             <li>
               <div class="score">
-                <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" />
+                <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" value=<%= @character.dexterity %> />
               </div>
               <div class="modifier">
                 <input name="Dexteritymod" placeholder="+0" />
@@ -54,7 +54,7 @@
             </li>
             <li>
               <div class="score">
-                <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" />
+                <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" value=<%= @character.constitution %> />
               </div>
               <div class="modifier">
                 <input name="Constitutionmod" placeholder="+0" />
@@ -62,7 +62,7 @@
             </li>
             <li>
               <div class="score">
-                <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" />
+                <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" value=<%= @character.wisdom %> />
               </div>
               <div class="modifier">
                 <input name="Wisdommod" placeholder="+0" />
@@ -70,7 +70,7 @@
             </li>
             <li>
               <div class="score">
-                <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" />
+                <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" value=<%= @character.intelligence %> />
               </div>
               <div class="modifier">
                 <input name="Intelligencemod" placeholder="+0" />
@@ -78,7 +78,7 @@
             </li>
             <li>
               <div class="score">
-                <label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" />
+                <label for="Charismascore">Charisma</label><input name="Charismascore" value=<%= @character.charisma %> />
               </div>
               <div class="modifier">
                 <input name="Charismamod" placeholder="+0" />
