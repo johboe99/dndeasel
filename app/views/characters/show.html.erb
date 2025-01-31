@@ -6,27 +6,27 @@
 <form class="charsheet">
   <header>
     <section class="charname">
-      <label for="charname">Character Name</label><input name="charname" placeholder="Thoradin Fireforge" />
+      <label for="charname">Character Name</label><input name="charname" value=<%= @character.name.capitalize %> readonly>
     </section>
     <section class="misc">
       <ul>
         <li>
-          <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" />
+          <label for="classlevel">Class</label><input name="classlevel" value=<%= @character.classname %> readonly>
         </li>
         <li>
-          <label for="background">Background</label><input name="background" placeholder="Acolyte" />
+          <label for="classlevel">Level</label><input name="levle" value=<%= @character.level %> />
         </li>
         <li>
-          <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface">
+          <label for="playername">Player Name</label><input name="playername" value=<%= @character.user.username %>>
         </li>
         <li>
           <label for="race">Race</label><input name="race" placeholder="Half-elf" />
         </li>
         <li>
-          <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
+          <label for="background">Background</label><input name="background" placeholder="Acolyte" />
         </li>
         <li>
-          <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" />
+          <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
         </li>
       </ul>
     </section>
