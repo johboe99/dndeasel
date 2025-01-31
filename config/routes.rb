@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :games do
     resources :characters, only: [:new, :create]
   end
-  resources :characters, only: [:index, :show, :destroy, :edit]
+  resources :characters
 
   # Defines the root path route ("/")
   # root "posts#index"

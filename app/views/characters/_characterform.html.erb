@@ -1,0 +1,13 @@
+<h3>Edit your Character <%= @character.name %> inside <%= @character.game.title %></h3>
+<div>
+  <%= simple_form_for @character do |f| %>
+    <%= f.input :level, label: "Character Level" %>
+    <%= f.input :strength, label: "Strength" %>
+    <%= f.input :dexterity, label: "Dexterity" %>
+    <%= f.input :constitution, label: "Constitution" %>
+    <%= f.input :intelligence, label: "Intelligence" %>
+    <%= f.input :wisdom, label: "Wisdom" %>
+    <%= f.input :charisma, label: "Charisma" %>
+    <%= f.submit "Save!", class: "btn btn-primary" %>
+  <% end %>
+</div>
