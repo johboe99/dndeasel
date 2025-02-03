@@ -1,13 +1,19 @@
 <div class="container mt-5">
-  <% @user.games.each do |game| %>
+  <h3>Your own Games</h3>
+  <% @games.each do |game| %>
     <div class="card-char">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="char-img" />
       <div class="card-char-content">
         <div class="card-char-infos">
+        <%# der part ist noch broken, durch das character.game funktionieren die associations irgendwie nicht mehr %>
+        <% raise %>
           <h2><%= link_to game.title, game %></h2>
           <p><%= game.description %></p>
         </div>
       </div>
     </div>
   <% end %>
+  <br>
+  <h3>Games you are participating in</h3>
+
 </div>

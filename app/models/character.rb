@@ -20,6 +20,20 @@ class Character < ApplicationRecord
                                                              Soldat Sonderling Strassenkind
                                                              Tempeldiener Unterhaltungskünstler
                                                              Volksheld Weiser) }
+  validates :expertise1, presence: true, inclusion: { in: %w(Acrobatics AnimalHandling Arcana
+                                                             Athletics Deception History
+                                                             Insight Intimidation Investigation
+                                                             Medicine Nature Perception
+                                                             Performance Persuasion
+                                                             Religion SleightOfHand
+                                                             Stealth Survival) }
+  validates :expertise2, presence: true, inclusion: { in: %w(Acrobatics AnimalHandling Arcana
+                                                             Athletics Deception History
+                                                             Insight Intimidation Investigation
+                                                             Medicine Nature Perception
+                                                             Performance Persuasion
+                                                             Religion SleightOfHand
+                                                             Stealth Survival) }
 
   def stat_mod(stat)
     (stat - 10) / 2
