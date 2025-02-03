@@ -41,7 +41,7 @@
                 <label for="Strengthscore">Strength</label><input name="Strengthscore" value=<%= @character.strength %> />
               </div>
               <div class="modifier">
-                <input name="Strengthmod" value=+<%= @character.stat_mod(@character.strength) %> />
+                <input name="Strengthmod" value=+<%= @str_mod %> />
               </div>
             </li>
             <li>
@@ -49,7 +49,7 @@
                 <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" value=<%= @character.dexterity %> />
               </div>
               <div class="modifier">
-                <input name="Dexteritymod" placeholder="+0" />
+                <input name="Dexteritymod" value=+<%= @character.stat_mod(@character.dexterity) %> />
               </div>
             </li>
             <li>
@@ -57,7 +57,7 @@
                 <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" value=<%= @character.constitution %> />
               </div>
               <div class="modifier">
-                <input name="Constitutionmod" placeholder="+0" />
+                <input name="Constitutionmod" value=+<%= @character.stat_mod(@character.constitution) %> />
               </div>
             </li>
             <li>
@@ -65,7 +65,7 @@
                 <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" value=<%= @character.wisdom %> />
               </div>
               <div class="modifier">
-                <input name="Wisdommod" placeholder="+0" />
+                <input name="Wisdommod" value=+<%= @character.stat_mod(@character.wisdom) %> />
               </div>
             </li>
             <li>
@@ -73,7 +73,7 @@
                 <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" value=<%= @character.intelligence %> />
               </div>
               <div class="modifier">
-                <input name="Intelligencemod" placeholder="+0" />
+                <input name="Intelligencemod" value=+<%= @character.stat_mod(@character.intelligence) %> />
               </div>
             </li>
             <li>
@@ -81,7 +81,7 @@
                 <label for="Charismascore">Charisma</label><input name="Charismascore" value=<%= @character.charisma %> />
               </div>
               <div class="modifier">
-                <input name="Charismamod" placeholder="+0" />
+                <input name="Charismamod" value=+<%= @character.stat_mod(@character.charisma) %> />
               </div>
             </li>
           </ul>
