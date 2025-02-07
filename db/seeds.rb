@@ -33,28 +33,28 @@ puts "Games created"
 
 char_1 = Character.create(name: "Arakos", classname: "Hexenmeister", level: 7, strength: 13, dexterity: 14,
                           constitution: 14, wisdom: 12, intelligence: 14, charisma: 20,
-                          race: "Tiefling", alignment: "Chaotic-Good", background: "Scharlatan", expertise1: "Arcana",
-                          expertise2: "Deception", user_id: user_1.id, game_id: game_1.id)
+                          race: "Tiefling", alignment: "Chaotic-Good", background: "Scharlatan", expertise: ["Arcana", "Deception"],
+                          user_id: user_1.id, game_id: game_1.id)
 
 char_2 = Character.create(name: "Dinovia", classname: "Schurke", level: 7, strength: 13, dexterity: 18,
                           constitution: 14, wisdom: 13, intelligence: 11, charisma: 12,
-                          race: "Halbelf", alignment: "Chaotic-Good", background: "Strassenkind", expertise1: "Stealth",
-                          expertise2: "SleightOfHand", user_id: user_2.id, game_id: game_1.id)
+                          race: "Halbelf", alignment: "Chaotic-Good", background: "Strassenkind", expertise: ["Stealth", "SleightOfHand"],
+                          user_id: user_2.id, game_id: game_1.id)
 
 char_3 = Character.create(name: "Rabenor", classname: "Barde", level: 7, strength: 12, dexterity: 16,
                           constitution: 14, wisdom: 13, intelligence: 12, charisma: 20,
-                          race: "Elf", alignment: "Lawful-Good", background: "Volksheld", expertise1: "Deception",
-                          expertise2: "Performance", user_id: user_3.id, game_id: game_1.id)
+                          race: "Elf", alignment: "Lawful-Good", background: "Volksheld", expertise: ["Deception", "Performance"],
+                          user_id: user_3.id, game_id: game_1.id)
 
 char_4 = Character.create(name: "Rutt", classname: "Paladin", level: 7, strength: 18, dexterity: 14,
                           constitution: 14, wisdom: 11, intelligence: 12, charisma: 18,
-                          race: "Mensch", alignment: "Lawful-Neutral", background: "Soldat", expertise1: "Insight",
-                          expertise2: "Investigation", user_id: user_4.id, game_id: game_1.id)
+                          race: "Mensch", alignment: "Lawful-Neutral", background: "Soldat", expertise: ["Insight", "Investigation"],
+                          user_id: user_4.id, game_id: game_1.id)
 
 char_5 = Character.create(name: "Belrigg", classname: "Kleriker", level: 7, strength: 15, dexterity: 14,
                           constitution: 18, wisdom: 16, intelligence: 12, charisma: 10,
-                          race: "Zwerg", alignment: "Lawful-Good", background: "Tempeldiener", expertise1: "Religion",
-                          expertise2: "Medicine", user_id: user_5.id, game_id: game_1.id)
+                          race: "Zwerg", alignment: "Lawful-Good", background: "Tempeldiener", expertise: ["Religion", "Medicine"],
+                          user_id: user_5.id, game_id: game_1.id)
 
 puts "Characters created"
 
