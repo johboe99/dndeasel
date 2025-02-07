@@ -14,19 +14,19 @@
           <label for="classlevel">Class</label><input name="classlevel" value=<%= @character.classname %> readonly>
         </li>
         <li>
-          <label for="classlevel">Level</label><input name="levle" value=<%= @character.level %> />
+          <label for="classlevel">Level</label><input name="level" value=<%= @character.level %> />
         </li>
         <li>
-          <label for="playername">Player Name</label><input name="playername" value=<%= @character.user.username %>>
+          <label for="playername">Player Name</label><input name="playername" value=<%= @character.user.username %> readonly>
         </li>
         <li>
-          <label for="race">Race</label><input name="race" placeholder="Half-elf" />
+          <label for="race">Race</label><input name="race" value=<%= @character.race %> readonly/>
         </li>
         <li>
-          <label for="background">Background</label><input name="background" placeholder="Acolyte" />
+          <label for="background">Background</label><input name="background" value=<%= @character.background %> readonly/>
         </li>
         <li>
-          <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
+          <label for="alignment">Alignment</label><input name="alignment" value=<%= @character.alignment %> readonly/>
         </li>
       </ul>
     </section>
@@ -49,7 +49,7 @@
                 <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" value=<%= @character.dexterity %> />
               </div>
               <div class="modifier">
-                <input name="Dexteritymod" value=+<%= @character.stat_mod(@character.dexterity) %> />
+                <input name="Dexteritymod" value=+<%= @dex_mod %> />
               </div>
             </li>
             <li>
@@ -57,7 +57,7 @@
                 <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" value=<%= @character.constitution %> />
               </div>
               <div class="modifier">
-                <input name="Constitutionmod" value=+<%= @character.stat_mod(@character.constitution) %> />
+                <input name="Constitutionmod" value=+<%= @con_mod %> />
               </div>
             </li>
             <li>
@@ -65,7 +65,7 @@
                 <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" value=<%= @character.wisdom %> />
               </div>
               <div class="modifier">
-                <input name="Wisdommod" value=+<%= @character.stat_mod(@character.wisdom) %> />
+                <input name="Wisdommod" value=+<%= @wis_mod %> />
               </div>
             </li>
             <li>
@@ -73,7 +73,7 @@
                 <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" value=<%= @character.intelligence %> />
               </div>
               <div class="modifier">
-                <input name="Intelligencemod" value=+<%= @character.stat_mod(@character.intelligence) %> />
+                <input name="Intelligencemod" value=+<%= @int_mod %> />
               </div>
             </li>
             <li>
@@ -81,7 +81,7 @@
                 <label for="Charismascore">Charisma</label><input name="Charismascore" value=<%= @character.charisma %> />
               </div>
               <div class="modifier">
-                <input name="Charismamod" value=+<%= @character.stat_mod(@character.charisma) %> />
+                <input name="Charismamod" value=+<%= @cha_mod %> />
               </div>
             </li>
           </ul>
@@ -97,27 +97,27 @@
             <div class="label-container">
               <label for="proficiencybonus">Proficiency Bonus</label>
             </div>
-            <input name="proficiencybonus" placeholder="+2" />
+            <input name="proficiencybonus" value=+<%= @character.proficiency_bonus %> />
           </div>
           <div class="saves list-section box">
             <ul>
               <li>
-                <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+0" type="text" /><input name="Strength-save-prof" type="checkbox" />
+                <label for="Strength-save">Strength</label><input name="Strength-save" value=+<%= @character.saving_throws.include?("Strength") ? @str_mod + @character.proficiency_bonus : @str_mod %> type="text" /><input name="Strength-save-prof" type="checkbox" />
               </li>
               <li>
-                <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" /><input name="Dexterity-save-prof" type="checkbox" />
+                <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" value=+<%= @character.saving_throws.include?("Dexterity") ? @dex_mod + @character.proficiency_bonus : @dex_mod %> type="text" /><input name="Dexterity-save-prof" type="checkbox" />
               </li>
               <li>
-                <label for="Constitution-save">Constitution</label><input name="Constitution-save" placeholder="+0" type="text" /><input name="Constitution-save-prof" type="checkbox" />
+                <label for="Constitution-save">Constitution</label><input name="Constitution-save" value=+<%= @character.saving_throws.include?("Constitution") ? @con_mod + @character.proficiency_bonus : @con_mod %> type="text" /><input name="Constitution-save-prof" type="checkbox" />
               </li>
               <li>
-                <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" placeholder="+0" type="text" /><input name="Wisdom-save-prof" type="checkbox" />
+                <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" value=+<%= @character.saving_throws.include?("Wisdom") ? @wis_mod + @character.proficiency_bonus : @wis_mod %> type="text" /><input name="Wisdom-save-prof" type="checkbox" />
               </li>
               <li>
-                <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" placeholder="+0" type="text" /><input name="Intelligence-save-prof" type="checkbox" />
+                <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" value=+<%= @character.saving_throws.include?("Intelligence") ? @int_mod + @character.proficiency_bonus : @int_mod %> type="text" /><input name="Intelligence-save-prof" type="checkbox" />
               </li>
               <li>
-                <label for="Charisma-save">Charisma</label><input name="Charisma-save" placeholder="+0" type="text" /><input name="Charisma-save-prof" type="checkbox" />
+                <label for="Charisma-save">Charisma</label><input name="Charisma-save" value=+<%= @character.saving_throws.include?("Charisma") ? @cha_mod + @character.proficiency_bonus : @cha_mod %> type="text" /><input name="Charisma-save-prof" type="checkbox" />
               </li>
             </ul>
             <div class="label">

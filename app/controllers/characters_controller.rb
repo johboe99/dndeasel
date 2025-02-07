@@ -7,6 +7,12 @@ class CharactersController < ApplicationController
   def show
     @character = Character.find(params[:id])
     @str_mod = @character.stat_mod(@character.strength)
+    @dex_mod = @character.stat_mod(@character.dexterity)
+    @con_mod = @character.stat_mod(@character.constitution)
+    @int_mod = @character.stat_mod(@character.intelligence)
+    @wis_mod = @character.stat_mod(@character.wisdom)
+    @cha_mod = @character.stat_mod(@character.charisma)
+
   end
 
   def new
