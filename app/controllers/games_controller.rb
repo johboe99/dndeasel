@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   def index
     @user = current_user
-    @games = @user.games
+    @games = @user.characters.map { |char| char.game}
+    @games << @user.games
   end
 
   def new
