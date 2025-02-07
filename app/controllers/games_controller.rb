@@ -1,8 +1,9 @@
 class GamesController < ApplicationController
   def index
-    @user = current_user
-    @games = @user.characters.map { |char| char.game}
-    @games << @user.games
+    created_games = Game.where(user_id: current_user.id)
+    participating_games = Game.joins(:characters).where(characters: { user_id: current_user.id })
+
+    @games = (created_games + participating_games).uniq
   end
 
   def new
